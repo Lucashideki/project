@@ -43,6 +43,6 @@ Este projeto está licenciado sob a Licença MIT.
 
 Para dúvidas ou mais informações, entre em contato:
 
-    E-mail: lucashidekitb@gmail.com
-    LinkedIn: https://www.linkedin.com/in/lucas-hideki-tobaro-barbeiro-955234100/
-    GitHub: https://github.com/Lucashideki
+E-mail: lucashidekitb@gmail.com
+LinkedIn: https://www.linkedin.com/in/lucas-hideki-tobaro-barbeiro-955234100/
+GitHub: https://github.com/Lucashideki
