@@ -19,10 +19,10 @@ Outras Ferramentas: Git, GitHub
 
 O projeto está dividido em microserviços, cada um responsável por uma parte específica da aplicação:
 
-    Task Service: Gerencia tarefas e suas operações.
-    User Service: Gerencia usuários e autenticação.
-    Notification Service: Envia notificações aos usuários.
-    Report Service: Gera e fornece relatórios.
+Task Service: Gerencia tarefas e suas operações.
+User Service: Gerencia usuários e autenticação.
+Notification Service: Envia notificações aos usuários.
+Report Service: Gera e fornece relatórios.
 
 ## Documentação
 
@@ -44,5 +44,7 @@ Este projeto está licenciado sob a Licença MIT.
 Para dúvidas ou mais informações, entre em contato:
 
 E-mail: lucashidekitb@gmail.com
+
 LinkedIn: https://www.linkedin.com/in/lucas-hideki-tobaro-barbeiro-955234100/
+
 GitHub: https://github.com/Lucashideki
