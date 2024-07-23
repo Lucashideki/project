@@ -1,106 +1,104 @@
-# 1. Visão Geral da Arquitetura
+# 1. Visão Geral
 
-A arquitetura da Plataforma de Gestão de Tarefas é baseada em uma abordagem de microserviços para garantir escalabilidade, flexibilidade e manutenção eficiente. O sistema é composto por vários serviços independentes que se comunicam através de APIs e são orquestrados usando Docker e Docker Compose.
+Este documento descreve o design arquitetônico e os componentes principais da Plataforma de Gestão de Tarefas. O objetivo é fornecer uma visão clara da estrutura do sistema, dos fluxos de dados e das decisões de design que guiam o desenvolvimento.
+# 2. Arquitetura do Sistema
 
-# 2. Componentes Principais
+A plataforma é baseada em uma arquitetura de microserviços, onde cada serviço é responsável por uma funcionalidade específica. Isso facilita a escalabilidade, a manutenção e a evolução contínua do sistema.
+2.1. Componentes Principais
 
-## 2.1. Microserviços
+    Gateway API: Roteia as solicitações do cliente para os microserviços apropriados.
+    Auth Service: Gerencia a autenticação e autorização dos usuários.
+    User Service: Gerencia as informações dos usuários.
+    Task Service: Gerencia as tarefas e os fluxos de trabalho.
+    Notification Service: Envia notificações aos usuários.
+    Report Service: Gera relatórios e análises de dados.
 
-### Task Service<br>
-**Responsabilidade:** Gerencia todas as operações relacionadas a tarefas, incluindo criação, atualização, e listagem de tarefas.<br>
-**Tecnologias:** PHP, MariaDB<br>
+2.2. Diagrama de Arquitetura
 
-Endpoints Principais:
+(Insira aqui um diagrama visual da arquitetura. Use uma ferramenta como Lucidchart ou Draw.io para criar o diagrama e faça o upload do arquivo no repositório, referenciando-o aqui.)
 
-    POST /tasks: Criar nova tarefa
-    GET /tasks/{id}: Obter detalhes de uma tarefa
-    PUT /tasks/{id}: Atualizar tarefa
-    DELETE /tasks/{id}: Excluir tarefa
+3. Design de Componentes
+3.1. Gateway API
 
-### User Service<br>
-**Responsabilidade:** Gerencia usuários e autenticação, incluindo registro, login e gerenciamento de perfis.<br>
-**Tecnologias:** PHP, MariaDB<br>
+    Tecnologia: PHP, Laravel
+    Responsabilidades:
+        Roteamento de solicitações para os microserviços.
+        Balanceamento de carga e controle de taxa de solicitação.
+        Implementação de segurança, como CORS e verificação de tokens JWT.
 
-Endpoints Principais:
+3.2. Auth Service
 
-        POST /users/register: Registrar novo usuário
-        POST /users/login: Autenticar usuário
-        GET /users/{id}: Obter detalhes do usuário
-        PUT /users/{id}: Atualizar perfil do usuário
+    Tecnologia: PHP, Laravel, JWT
+    Responsabilidades:
+        Gerenciamento de usuários (login, registro, logout).
+        Emissão e verificação de tokens JWT.
+        Gerenciamento de roles e permissões.
 
-### Notification Service<br>
-**Responsabilidade:** Envia notificações para os usuários sobre eventos importantes, como novas tarefas ou atualizações.<br>
-**Tecnologias:** PHP, MariaDB<br>
-    
-Endpoints Principais:
+3.3. User Service
 
-        POST /notifications/send: Enviar notificação
-        GET /notifications/{id}: Obter notificação específica
+    Tecnologia: PHP, Laravel, MariaDB
+    Responsabilidades:
+        CRUD de informações dos usuários.
+        Gerenciamento de perfis de usuários.
+        Integração com o Auth Service para validação de usuários.
 
-### Report Service<br>
+3.4. Task Service
 
-**Responsabilidade:** Gera e fornece relatórios sobre o uso do sistema, estatísticas de tarefas e outros dados relevantes.<br>
-**Tecnologias:** PHP, MariaDB<br>
-    
-Endpoints Principais:
+    Tecnologia: PHP, Laravel, MariaDB
+    Responsabilidades:
+        CRUD de tarefas.
+        Gerenciamento de estados e prioridades das tarefas.
+        Implementação de funcionalidades de colaboração em tarefas.
 
-        GET /reports/tasks: Obter relatório de tarefas
-        GET /reports/users: Obter relatório de usuários
+3.5. Notification Service
 
-## 2.2. Front-End
+    Tecnologia: PHP, Laravel, Redis (para filas)
+    Responsabilidades:
+        Envio de notificações em tempo real e por e-mail.
+        Gerenciamento de preferências de notificação dos usuários.
+        Integração com outros serviços para eventos de notificação.
 
-**Responsabilidade:** Interface de usuário interativa e responsiva, desenvolvida com Angular.<br>
+3.6. Report Service
 
-**Tecnologias:** Angular<br>
+    Tecnologia: PHP, Laravel, MariaDB
+    Responsabilidades:
+        Geração de relatórios baseados em dados de tarefas e usuários.
+        Exportação de relatórios em formatos diferentes (PDF, CSV).
+        Implementação de gráficos e visualizações de dados.
 
-**Funcionalidades:**<br>
-    Painel de controle de tarefas<br>
-    Perfil de usuário e configurações<br>
-    Visualização de relatórios<br>
+4. Fluxos de Dados
+4.1. Fluxo de Autenticação
 
-## 2.3. Banco de Dados
+    O usuário envia uma solicitação de login para o Auth Service.
+    O Auth Service valida as credenciais e emite um token JWT.
+    O token JWT é enviado de volta ao cliente.
+    O cliente inclui o token JWT em todas as solicitações subsequentes.
+    Os microserviços validam o token JWT antes de processar as solicitações.
 
-**Banco de Dados:** MariaDB<br>
+4.2. Fluxo de Criação de Tarefa
 
-**Responsabilidade:** Armazenar dados de tarefas, usuários e notificações de forma eficiente.<br>
+    O usuário envia uma solicitação para criar uma tarefa para o Task Service.
+    O Task Service valida a solicitação e cria a tarefa no banco de dados.
+    O Task Service envia uma notificação para o Notification Service.
+    O Notification Service envia uma notificação ao usuário.
 
-**Estrutura:**<br>
-    Tasks: Tabela para armazenar informações de tarefas.<br>
-    Users: Tabela para armazenar informações de usuários.<br>
-    Notifications: Tabela para armazenar notificações enviadas.<br>
+5. Decisões de Design
+5.1. Escolha da Arquitetura de Microserviços
 
-## 2.4. Orquestração e Containerização
+    Justificativa: A arquitetura de microserviços permite uma escalabilidade mais fácil e uma melhor separação de responsabilidades, facilitando a manutenção e a evolução do sistema.
 
-**Docker Compose:** Utilizado para definir e gerenciar a configuração de múltiplos containers.<br>
-**Containers:**<br>
-    Task Service Container<br>
-    User Service Container<br>
-    Notification Service Container<br>
-    Report Service Container<br>
-    Front-End Container<br>
+5.2. Uso de MariaDB
 
-# 3. Diagramas de Arquitetura
+    Justificativa: MariaDB é escolhido pela sua confiabilidade, performance e compatibilidade com MySQL, facilitando a integração com aplicações existentes.
 
-# 3.1. Diagrama de Arquitetura de Microserviços
+5.3. Autenticação com JWT
 
-Here is a simple flow chart:
+    Justificativa: Tokens JWT são leves e permitem uma autenticação segura e eficiente, sem a necessidade de manter o estado do servidor.
 
-```mermaid
-graph TD;
-    NotificarionService-->GatewayAPI;
-    TaskService-->GatewayAPI;
-    UserService-->GatewayAPI;
-    GatewayAPI-->FrontEnd;
-    GatewayAPI-->ReportService;
-```
+6. Considerações Finais
 
-# 4. Estratégia de Segurança
+Este design é uma base sólida para o desenvolvimento da Plataforma de Gestão de Tarefas. No entanto, a flexibilidade e a adaptação contínua são essenciais à medida que o projeto evolui e novas necessidades surgem.
 
-**Autenticação e Autorização:** Utilização de tokens JWT para autenticação e controle de acesso.<br>
-**Proteção de Dados:** Criptografia de dados sensíveis e utilização de conexões seguras (HTTPS).<br>
-**Monitoramento e Logs:** Implementação de ferramentas de monitoramento para identificar e responder a eventos de segurança.<br>
+Se tiver dúvidas ou sugestões, sinta-se à vontade para contribuir e discutir no repositório do projeto.
 
-# 5. Estratégia de Deploy
-
-**Ambiente de Desenvolvimento:** Containers Docker configurados e gerenciados localmente.<br>
-**Ambiente de Produção:** Deploy em servidores com suporte a Docker, configurados para alta disponibilidade e escalabilidade.<br>
+Essa versão atualizada reflete a escolha de PHP e Laravel para o desenvolvimento do back-end. Se precisar de mais ajustes ou tiver outras perguntas, estou à disposição para ajudar!
