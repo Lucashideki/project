@@ -6,9 +6,9 @@ A arquitetura da Plataforma de Gestão de Tarefas é baseada em uma abordagem de
 
 ## 2.1. Microserviços
 
-Task Service
-        **Responsabilidade:** Gerencia todas as operações relacionadas a tarefas, incluindo criação, atualização, e listagem de tarefas.<br>
-        **Tecnologias:** PHP, MariaDB<br>
+### Task Service<br>
+**Responsabilidade:** Gerencia todas as operações relacionadas a tarefas, incluindo criação, atualização, e listagem de tarefas.<br>
+**Tecnologias:** PHP, MariaDB<br>
         Endpoints Principais:<br>
 ```
 POST /tasks: Criar nova tarefa
@@ -18,9 +18,9 @@ DELETE /tasks/{id}: Excluir tarefa
 ```
 
 
-User Service<br>
-        **Responsabilidade:** Gerencia usuários e autenticação, incluindo registro, login e gerenciamento de perfis.<br>
-        **Tecnologias:** PHP, MariaDB<br>
+### User Service<br>
+**Responsabilidade:** Gerencia usuários e autenticação, incluindo registro, login e gerenciamento de perfis.<br>
+**Tecnologias:** PHP, MariaDB<br>
         Endpoints Principais:<br>
 ```
 POST /users/register: Registrar novo usuário
@@ -29,19 +29,19 @@ GET /users/{id}: Obter detalhes do usuário
 PUT /users/{id}: Atualizar perfil do usuário
 ```
 
-Notification Service<br>
-        **Responsabilidade:** Envia notificações para os usuários sobre eventos importantes, como novas tarefas ou atualizações.<br>
-        **Tecnologias:** PHP, MariaDB<br>
-        Endpoints Principais:<br>
+### Notification Service<br>
+**Responsabilidade:** Envia notificações para os usuários sobre eventos importantes, como novas tarefas ou atualizações.<br>
+**Tecnologias:** PHP, MariaDB<br>
+Endpoints Principais:<br>
 ```
 POST /notifications/send: Enviar notificação
 GET /notifications/{id}: Obter notificação específica
 ```
 
-Report Service<br>
-        **Responsabilidade:** Gera e fornece relatórios sobre o uso do sistema, estatísticas de tarefas e outros dados relevantes.<br>
-        **Tecnologias:** PHP, MariaDB<br>
-        Endpoints Principais:<br>
+### Report Service<br>
+**Responsabilidade:** Gera e fornece relatórios sobre o uso do sistema, estatísticas de tarefas e outros dados relevantes.<br>
+**Tecnologias:** PHP, MariaDB<br>
+Endpoints Principais:<br>
 ```
 GET /reports/tasks: Obter relatório de tarefas
 GET /reports/users: Obter relatório de usuários
