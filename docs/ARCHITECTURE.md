@@ -93,9 +93,20 @@ A plataforma é baseada em uma arquitetura de microserviços, onde cada serviço
 
 5.3. Autenticação com JWT
 
+<<<<<<< HEAD
     Justificativa: Tokens JWT são leves e permitem uma autenticação segura e eficiente, sem a necessidade de manter o estado do servidor.
 
 6. Considerações Finais
+=======
+```mermaid
+graph TD;
+    NotificarionService-->GatewayAPI;
+    TaskService-->GatewayAPI;
+    UserService-->GatewayAPI;
+    GatewayAPI-->FrontEnd;
+    GatewayAPI-->ReportService;
+```
+>>>>>>> f753275754edcf2431517384e3a4667bb6e04969
 
 Este design é uma base sólida para o desenvolvimento da Plataforma de Gestão de Tarefas. No entanto, a flexibilidade e a adaptação contínua são essenciais à medida que o projeto evolui e novas necessidades surgem.
 
