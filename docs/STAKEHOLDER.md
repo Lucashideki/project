@@ -6,63 +6,63 @@ Este documento descreve os principais stakeholders da Plataforma de Gestão de T
 
 ## 2.1. Internos
 
-    Equipe de Desenvolvimento
-        Interesses: Cumprimento dos prazos, qualidade do código, adoção de boas práticas de desenvolvimento.
-        Influência: Alta, pois são responsáveis pela implementação das funcionalidades.
+Equipe de Desenvolvimento<br>
+        **Interesses:** Cumprimento dos prazos, qualidade do código, adoção de boas práticas de desenvolvimento.<br>
+        **Influência:** Alta, pois são responsáveis pela implementação das funcionalidades.<br>
 
-    Product Owner
-        Interesses: Alinhamento das funcionalidades com as necessidades do negócio, priorização de tarefas, satisfação do cliente.
-        Influência: Alta, pois define a visão e a prioridade do produto.
+Product Owner<br>
+        **Interesses:** Alinhamento das funcionalidades com as necessidades do negócio, priorização de tarefas, satisfação do cliente.<br>
+        **Influência:** Alta, pois define a visão e a prioridade do produto.<br>
 
-    Gestores de Projeto
-        Interesses: Gestão eficiente dos recursos, cumprimento dos prazos e orçamento.
-        Influência: Alta, pois coordenam as atividades e recursos do projeto.
+Gestores de Projeto<br>
+        **Interesses:** Gestão eficiente dos recursos, cumprimento dos prazos e orçamento.<br>
+        **Influência:** Alta, pois coordenam as atividades e recursos do projeto.<br>
 
 ## 2.2. Externos
 
-    Clientes Finais
-        Interesses: Facilidade de uso, funcionalidade robusta, confiabilidade do sistema.
-        Influência: Alta, pois seu feedback e satisfação determinam o sucesso do produto.
+Clientes Finais<br>
+        **Interesses:** Facilidade de uso, funcionalidade robusta, confiabilidade do sistema.<br>
+        **Influência:** Alta, pois seu feedback e satisfação determinam o sucesso do produto.<br>
 
-    Parceiros e Fornecedores
-        Interesses: Integração com seus sistemas, cumprimento dos acordos de nível de serviço (SLAs).
-        Influência: Média, pois fornecem componentes ou serviços essenciais para o projeto.
+Parceiros e Fornecedores<br>
+        **Interesses:** Integração com seus sistemas, cumprimento dos acordos de nível de serviço (SLAs).<br>
+        **Influência:** Média, pois fornecem componentes ou serviços essenciais para o projeto.<br>
 
-    Investidores e Patrocinadores
-        Interesses: Retorno sobre investimento, progresso do projeto, viabilidade financeira.
-        Influência: Alta, pois financiam e suportam o projeto.
+Investidores e Patrocinadores<br>
+        **Interesses:** Retorno sobre investimento, progresso do projeto, viabilidade financeira.<br>
+        **Influência:** Alta, pois financiam e suportam o projeto.<br>
 
 # 3. Estratégias de Gerenciamento
 
 ## 3.1. Comunicação
 
-    Reuniões Regulares
-        Realizar reuniões semanais com a equipe de desenvolvimento e stakeholders principais para revisar o progresso, identificar obstáculos e ajustar o plano conforme necessário.
+Reuniões Regulares<br>
+        Realizar reuniões semanais com a equipe de desenvolvimento e stakeholders principais para revisar o progresso, identificar obstáculos e ajustar o plano conforme necessário.<br>
 
-    Atualizações de Status
-        Enviar relatórios de status semanais para todos os stakeholders, destacando marcos atingidos, desafios e próximos passos.
+Atualizações de Status<br>
+        Enviar relatórios de status semanais para todos os stakeholders, destacando marcos atingidos, desafios e próximos passos.<br>
 
-    Feedback Contínuo
-        Coletar feedback contínuo dos clientes finais através de pesquisas, entrevistas e testes de usabilidade.
+Feedback Contínuo<br>
+        Coletar feedback contínuo dos clientes finais através de pesquisas, entrevistas e testes de usabilidade.<br>
 
 ## 3.2. Gestão das Expectativas
 
-    Definição Clara de Requisitos
-        Trabalhar com o Product Owner para definir e documentar claramente os requisitos do projeto, garantindo que todos os stakeholders compreendam o escopo e os objetivos.
+Definição Clara de Requisitos
+    Trabalhar com o Product Owner para definir e documentar claramente os requisitos do projeto, garantindo que todos os stakeholders compreendam o escopo e os objetivos.
 
-    Priorização de Funcionalidades
-        Utilizar metodologias ágeis para priorizar as funcionalidades com base no valor para o negócio e no feedback dos stakeholders.
+Priorização de Funcionalidades
+    Utilizar metodologias ágeis para priorizar as funcionalidades com base no valor para o negócio e no feedback dos stakeholders.
 
-    Gestão de Mudanças
-        Implementar um processo de gestão de mudanças para avaliar o impacto de novas solicitações e ajustar o plano de projeto de acordo.
+Gestão de Mudanças
+    Implementar um processo de gestão de mudanças para avaliar o impacto de novas solicitações e ajustar o plano de projeto de acordo.
 
 ## 3.3. Envolvimento e Alinhamento
 
-    Workshops e Demonstrações
-        Organizar workshops e demonstrações regulares para manter os stakeholders informados e engajados no desenvolvimento do produto.
+Workshops e Demonstrações<br>
+    Organizar workshops e demonstrações regulares para manter os stakeholders informados e engajados no desenvolvimento do produto.<br>
 
-    Alinhamento Estratégico
-        Garantir que os objetivos do projeto estejam alinhados com as metas estratégicas da organização, ajustando o roadmap conforme necessário.
+Alinhamento Estratégico<br>
+    Garantir que os objetivos do projeto estejam alinhados com as metas estratégicas da organização, ajustando o roadmap conforme necessário.<br>
 
 # 4. Matriz de Stakeholders
 
