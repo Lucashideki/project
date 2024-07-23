@@ -83,8 +83,6 @@ Endpoints Principais:
 
 # 3.1. Diagrama de Arquitetura de Microserviços
 
-Here is a simple flow chart:
-
 ```mermaid
 graph TD;
     NotificarionService-->GatewayAPI;
